@@ -11,13 +11,10 @@ on:
 
 permissions:
   contents: read
-image:
-  repository: victorbug/para_pydensecrf:1.0
-  tag: 0.2
-  pullPolicy: IfNotPresent
+
   
 jobs:
-  build:
+
 
     runs-on: ubuntu-latest
 
