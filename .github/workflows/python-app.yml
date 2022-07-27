@@ -27,6 +27,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
+        pip install pillow==9.1.0
+        pip install numpy==1.22.3
+        pip install matplotlib==3.5.2
+        pip install -U protobuf==3.19 #en AWS hay una version mas avanzada antes
+        pip install --no-cache-dir tensorflow==2.9.0 #no cache porque la instancia en AWS es muy chica y con esto se evita guardar archivos 
+        pip install import_ipynb==0.1.4
+        pip install opencv-python==4.5.5.64
+        
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -37,3 +45,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+
+# sudo apt-get -y update #Para openCV-python
+# sudo apt-get -y install ffmpeg libsm6 libxext6 #Para openCV-python
