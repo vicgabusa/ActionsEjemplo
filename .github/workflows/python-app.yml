@@ -11,15 +11,18 @@ on:
 
 permissions:
   contents: read
-
+image:
+  repository: victorbug/para_pydensecrf:1.0
+  tag: 0.2
+  pullPolicy: IfNotPresent
+  
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
     steps:
-    - name: My first step
-      uses: docker pull victorbug/para_pydensecrf:1.0
+
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
