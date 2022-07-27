@@ -35,6 +35,9 @@ jobs:
         pip install import_ipynb==0.1.4
         pip install opencv-python==4.5.5.64
         
+        sudo apt-get -y update #Para openCV-python
+        sudo apt-get -y install ffmpeg libsm6 libxext6 #Para openCV-python
+        
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
